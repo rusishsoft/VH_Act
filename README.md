@@ -124,6 +124,6 @@ Desktop Hub,s/n=```FE17189D-5211-C848-A448-788475CB15C8```,20 devices
 ###### 3.3. [Х]Активация программы
 ```sh
 sudo gcc ./activator.c -lcrypto -o ./activator
-sudo ./activator /usr/local/sbin/vhusbdi386 ```<НАШ СКОПРОВАННЫЙ СЕРИЙНЫЙ НОМЕР>```
+sudo ./activator /usr/local/sbin/vhusbdi386 <НАШ СКОПРОВАННЫЙ СЕРИЙНЫЙ НОМЕР>
 
 ```
