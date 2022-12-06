@@ -141,6 +141,6 @@ sudo systemctl start virtualhere.service
 sudo systemctl status virtualhere.service
 ```
 
-###### 4. Юзаем
+## 4. Юзаем
 При успешном выполнении вышеописанных шагов можно перезагрузить сервер ключей и перейти к использованию.
 Для этого в клиенте щелкните ПКМ по строке устройства и в открывшемся меню щелкните "Start using this device"
