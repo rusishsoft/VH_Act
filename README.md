@@ -1,14 +1,14 @@
 ## Настройка сервера USB Hasp на базе Ubuntu Server 16.04 LTS (xenial)
 ###### !АХТУНГ! Использовалась версия Ubuntu Server 16.04 LTS x86_64 с версией ядра linux-image-4.4.0-210-generic
 
-## 1 Подготовка 
-###### 1.1 Установка необходимого софта
+## 1. Подготовка 
+###### 1.1. Установка необходимого софта
 ```sh
 sudo apt update
 sudo apt install gcc g++ make libjansson-dev libusb-dev libc6-i386 git
 ```
 
-###### 1.2 Установка компонентов ядра
+###### 1.2. Установка компонентов ядра
 ```sh
 sudo apt update
 sudo apt install linux-headers-`uname -r`
@@ -16,7 +16,7 @@ sudo apt install linux-tools-lts-xenial
 ```
 
 
-## 2 Загрузка исходных кодов компонентов ядра и их сборка
+## 2. Загрузка исходных кодов компонентов ядра и их сборка
 ```sh
 cd /usr/src
 git clone https://github.com/rusishsoft/VH_Act.git
@@ -98,3 +98,24 @@ sudo cp ./50user.json /etc/usbhaspkey/
 sudo systemctl start usbhaspemul
 sudo systemctl status usbhaspemul
 ```
+
+## 3. Установка и активация VirtualHere
+###### !АХТУНГ №2! Несмотря на разрядность ОС Ubuntu, VirtualHere устанавливается в 32-битном режиме
+
+###### 3.1. Установка Linux-based серверной части
+```sh
+cd ../VirtualHere
+sudo chmod +x ./install_server
+sudo ./install_server
+```
+
+###### 3.2. Установка Windows-based клиентской части
+Для этого в данном репозитории в папке "WindowsClient" найдите файл, соответствующий вашей аритектуре:
+* Windows (x86) - vhui32.exe
+* Windows (x64) - vhui64.exe
+* Windows (ARM64) - vhuiarm64.exe
+
+Скачайте и запустите файл.
+В открышемся окне выберите обнаруженный хаб, щекните ПКМ и в меню щелните пункт "License"
+В открывшемся окне выделите и скопируте значение серийного номера
+Desktop Hub,`#0969DA`s/n=FE17189D-5211-C848-A448-788475CB15C8,20 devices
