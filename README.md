@@ -15,17 +15,27 @@ sudo apt install linux-headers-`uname -r`
 sudo apt install linux-tools-lts-xenial
 ```
 
-
-## 2. Загрузка исходных кодов компонентов ядра и их сборка
+###### 1.3.
 ```sh
 cd /usr/src
 git clone https://github.com/rusishsoft/VH_Act.git
+cd ./VH_Act
 ```
 
+###### 1.4. Установка HASP Daemod (haspd)
+###### !АХТУНГ №2! Несмотря на название архитектуры в имени пакет, haspd - 32-битный компонент
+
+```sh
+cd ./haspd
+sudo dpkg -i *.deb
+cd ../
+```
+
+## 2. Сборка из исходных кодов компонентов ядра и их установка
 ###### 2.1. Сборка и установка VHCI HCD
 ```sh
 KVER=`uname -r`
-cd vhci-hcd
+cd ./vhci-hcd
 sudo mkdir -p linux/${KVER}/drivers/usb/core
 sudo cp /usr/src/linux-headers-4.4.0-210-generic/include/linux/usb/hcd.h linux/${KVER}/drivers/usb/core
 sudo sed -i 's/#define DEBUG/\/\/#define DEBUG/' usb-vhci-hcd.c
@@ -100,7 +110,7 @@ sudo systemctl status usbhaspemul
 ```
 
 ## 3. Установка и активация VirtualHere
-###### !АХТУНГ №2! Несмотря на разрядность ОС Ubuntu, VirtualHere устанавливается в 32-битном режиме
+###### !АХТУНГ №3! Несмотря на разрядность ОС Ubuntu, VirtualHere устанавливается в 32-битном режиме
 
 ###### 3.1. Установка Linux-based серверной части
 ```sh
@@ -123,7 +133,9 @@ Desktop Hub,s/n=```FE17189D-5211-C848-A448-788475CB15C8```,20 devices
 
 ###### 3.3. [Х]Активация программы
 ```sh
+sudo systemctl stop virtualhere.service
 sudo gcc ./activator.c -lcrypto -o ./activator
 sudo ./activator /usr/local/sbin/vhusbdi386 <НАШ СКОПРОВАННЫЙ СЕРИЙНЫЙ НОМЕР>
-
+sudo systemctl start virtualhere.service
+sudo systemctl status virtualhere.service
 ```
