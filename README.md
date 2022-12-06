@@ -67,7 +67,7 @@ sudo mkdir /etc/usbhaspkey/
 sudo nano /etc/systemd/system/usbhaspemul.service
 ```
 и добавим в него следующее содержимое
-```sh
+```unit
 [Unit]
 Description=Emulation HASP key for 1C
 Requires=haspd.service
