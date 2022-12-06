@@ -79,3 +79,22 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
+
+###### 2.4. Добавление в автозагрузку демона UsbHaspEmul
+```sh
+sudo systemctl daemon-reload
+sudo systemctl enable usbhaspemul
+```
+
+###### 2.5. Загрузка дампов ключей в директорию /etc/usbhaspkeys
+```sh
+cd ../dumps
+sudo cp ./1c_server_x64.json /etc/usbhaspkey/
+sudo cp ./50user.json /etc/usbhaspkey/
+```
+
+###### 2.6. Запуск UsbHaspEmul
+```sh
+sudo systemctl start usbhaspemul
+sudo systemctl status usbhaspemul
+```
