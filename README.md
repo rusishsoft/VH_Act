@@ -120,3 +120,4 @@ sudo ./install_server
 В открывшемся окне выделите и скопируте значение серийного номера
 Desktop Hub,`#0969DA`s/n=FE17189D-5211-C848-A448-788475CB15C8,20 devices
 <font color="red">This is some text!</font>
+<p style='color:red'>This is some red text.</p>
