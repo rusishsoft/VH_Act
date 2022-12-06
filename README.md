@@ -23,7 +23,7 @@ git clone https://github.com/rusishsoft/VH_Act.git
 ```
 
 ###### 2.1. Сборка и установка VHCI HCD
-
+```sh
 KVER=`uname -r`
 cd vhci-hcd-1.15
 sudo mkdir -p linux/${KVER}/drivers/usb/core
