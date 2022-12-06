@@ -2,7 +2,7 @@
 
 ###### 1. Подготовка. Установка необходимого софта
 
+```bash
 sudo apt update
 sudo apt install gcc g++ make libjansson-dev libusb-dev git
-
-
+```
