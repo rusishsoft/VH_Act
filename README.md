@@ -5,7 +5,7 @@
 ###### 1.1. Установка необходимого софта
 ```sh
 sudo apt update
-sudo apt install gcc g++ make libjansson-dev libusb-dev libc6-i386 git
+sudo apt install gcc g++ make libjansson-dev libusb-dev libc6-i386 libssl-dev git
 ```
 
 ###### 1.2. Установка компонентов ядра
@@ -116,6 +116,14 @@ sudo ./install_server
 * Windows (ARM64) - vhuiarm64.exe
 
 Скачайте и запустите файл.
-В открышемся окне выберите обнаруженный хаб, щекните ПКМ и в меню щелните пункт "License"
-В открывшемся окне выделите и скопируте значение серийного номера
+В открышемся окне выберите обнаруженный хаб, щекните ПКМ и в меню щелните пункт "License".
+В открывшемся окне выделите и скопируте значение серийного номера:
 Desktop Hub,s/n=```FE17189D-5211-C848-A448-788475CB15C8```,20 devices
+Этот номер потребуется для активации сервера VirtualHere
+
+###### 3.3. [Х]Активация программы
+```sh
+sudo gcc ./activator.c -lcrypto -o ./activator
+sudo ./activator /usr/local/sbin/vhusbdi386 ```<НАШ СКОПРОВАННЫЙ СЕРИЙНЫЙ НОМЕР>```
+
+```
