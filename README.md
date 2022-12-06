@@ -4,7 +4,7 @@
 
 ###### 1.1 Подготовка. Установка необходимого софта
 
-```bash
+```sh
 sudo apt update
 sudo apt install gcc g++ make libjansson-dev libusb-dev git
 ```
@@ -12,8 +12,14 @@ sudo apt install gcc g++ make libjansson-dev libusb-dev git
 ###### 1.2 Подготовка. Установка компонентов ядра
 
 
-```bash
+```sh
 sudo apt update
 sudo apt install linux-headers-`uname -r`
 sudo apt install linux-tools-lts-xenial
+```
+
+###### 2.1 Загрузка исходных кодов компонентов ядра и их сборка
+```sh
+cd /usr/src
+git clone 
 ```
