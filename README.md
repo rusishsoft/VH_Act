@@ -118,7 +118,4 @@ sudo ./install_server
 Скачайте и запустите файл.
 В открышемся окне выберите обнаруженный хаб, щекните ПКМ и в меню щелните пункт "License"
 В открывшемся окне выделите и скопируте значение серийного номера
-Desktop Hub,`#0969DA`s/n=FE17189D-5211-C848-A448-788475CB15C8,20 devices
-<span style="color:green;font-weight:700;font-size:20px">
-    markdown color font styles
-</span>
+Desktop Hub,s/n=```diffFE17189D-5211-C848-A448-788475CB15C8```,20 devices
