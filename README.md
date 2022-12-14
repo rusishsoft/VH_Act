@@ -151,6 +151,13 @@ sudo ./activator /usr/local/sbin/vhusbdi386 <НАШ СКОПРОВАННЫЙ С�
 nano /usr/local/etc/virtualhere/config.ini
 ```
 
+или используйте команду:
+
+```sh
+sudo tee /usr/local/etc/virtualhere/config.ini <<< "License=FE17189D-5211-C848-A448-788475CB15C8,20,MCECDwCdc5KISTF+TCfw6p6JJAIOS+CN+M5yfpp5LTXMofY="
+
+```
+
 ###### 3.5. Запуск Virtual Here
 ```sh
 sudo systemctl start virtualhere.service
