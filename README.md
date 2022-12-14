@@ -137,6 +137,22 @@ Desktop Hub,s/n=```FE17189D-5211-C848-A448-788475CB15C8```,20 devices
 sudo systemctl stop virtualhere.service
 sudo gcc ./activator.c -lcrypto -o ./activator
 sudo ./activator /usr/local/sbin/vhusbdi386 <НАШ СКОПРОВАННЫЙ СЕРИЙНЫЙ НОМЕР>
+```
+
+###### 3.4. [Х]Активация программы. Добавление ключа в конфиг Virtual Here
+Получивуюся строку вида:
+```License=FE17189D-5211-C848-A448-788475CB15C8,20,MCECDwCdc5KISTF+TCfw6p6JJAIOS+CN+M5yfpp5LTXMofY=```
+необходимо добавить в конфиг Virtual Here, который в Ubuntu Server хранится в следующем каталоге:
+```/usr/local/etc/virtualhere/config.ini```
+
+Для этого скопируйте строку лицензии, и вставьте в конец конфига Virtual Here
+
+```sh
+nano /usr/local/etc/virtualhere/config.ini
+```
+
+###### 3.5. Запуск Virtual Here
+```sh
 sudo systemctl start virtualhere.service
 sudo systemctl status virtualhere.service
 ```
